@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: fct_user_orders
+    description: source of truth for user orders, total items/spent, user averages per order, and first and latest order dates
+    columns:
+      - name: user_guid
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        tests:
+          - not_null
+      - name: last_name
+        tests:
+          - not_null
+      - name: total_orders
+        tests:
+          - positive_values
+      - name: total_spent
+        tests:
+          - positive_values
+      - name: avg_spent_per_order
+        tests:
+          - positive_values
+      - name: avg_items_per_order
+        tests: 
+          - positive_values
+      - name: avg_unique_items_per_order
+        tests:
+          - positive_values
+      - name: first_order
+        tests:
+      - name: latest_order
+        tests:

@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: int_user_orders
+    description: count of orders and summary of amount spent by user
+    columns:
+      - name: user_guid
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        tests:
+          - not_null
+      - name: last_name
+        tests:
+          - not_null
+      - name: total_orders
+        tests:
+          - positive_values
+      - name: total_spent
+        tests:
+          - positive_values

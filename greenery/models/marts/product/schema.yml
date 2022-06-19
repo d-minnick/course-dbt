@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: fct_sessions
+    description: source of truth for each session, including user, events, start/end, and session length.
+    columns:
+      - name: session_guid
+        tests:
+          - not_null
+          - unique
+      - name: user_guid
+        tests:
+          - not_null
+      - name: first_name
+        tests:
+          - not_null
+      - name: last_name
+        tests:
+          - not_null
+      - name: user_email
+        tests:
+          - not_null
+      - name: page_view
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+      - name: add_to_cart
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+      - name: checkout
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+      - name: package_shipped
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+      - name: first_event
+        tests:
+          - not_null
+      - name: last_event
+        tests:
+          - not_null
+      - name: sessions_length_minutes
+        tests:
+          - positive_values

@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: int_order_items
+    description: calculates item count and unique item count for each order
+    columns:
+      - name: order_guid
+        tests:
+          - not_null
+      - name: user_guid
+        tests:
+          - not_null
+      - name: item_count
+        tests:
+          - positive_values
+      - name: unique_items
+        tests:
+          - positive_values
