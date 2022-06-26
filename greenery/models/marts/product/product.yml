@@ -1,6 +1,33 @@
 version: 2
 
 models:
+  - name: fct_product_events
+    description: Aggregates each product's session events by type, unique orders, unique sessions, and conversion rate.
+    columns:
+      - name: product_guid
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        tests:
+          - not_null
+      - name: unique_sessions
+        tests:
+      - name: unique_orders
+        tests:
+      - name: total_add_to_cart_events
+        tests:
+      - name: total_checkout_events
+        tests:
+      - name: total_page_view_events
+        tests:
+      - name: total_package_shipped_events
+        tests:
+      - name: product_conversion_rate
+        tests:
+          - positive_values
+
+
   - name: fct_sessions
     description: source of truth for each session, including user, events, start/end, and session length.
     columns:
@@ -46,6 +73,6 @@ models:
       - name: last_event
         tests:
           - not_null
-      - name: sessions_length_minutes
+      - name: session_length_minutes
         tests:
           - positive_values

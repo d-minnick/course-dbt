@@ -58,7 +58,8 @@ models:
           - not_null
       - name: quantity
         tests:
-          - positive_values
+          - dbt_utils.accepted_range:
+              min_value: 0
 
   - name: stg_greenery__orders
     description: user orders including cost, shipping, order status and delivery details

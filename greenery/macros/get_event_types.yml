@@ -1,0 +1,5 @@
+version: 2
+
+macros:
+  - name: get_event_types
+    description: hard-coded list of session event types
