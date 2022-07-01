@@ -1,22 +1,21 @@
 # Week 4 Project
 
 ## Introduction
-```
 For the final week of our project, we are going to tackle a data modeling challenge inspired by the real world: understanding the product funnel. This is very representative of the type of data modeling work that happens within data organizations. I’ve spent a lot of time with our product data at Drizly, building reporting and metrics for our Product and Engineering teams!
-```
+
 
 ## Project Details
 ### Part 1. dbt Snapshots
 Let's put our snapshot skills to the test! At Greenery, we want to understand how our data is changing over time. For some data, like events, this is already possible. For other datasets, like products, we only know what that table looks like at a point in time. Some questions that the business might be asking could be:
 
   #### How often are items going out of stock? And how quickly are they back in stock?
-    *monitored in product_snapshot.sql
+    Snapshot created: product_snapshot.sql
 
   #### What does an order's lifecycle typically look like?
-    *monitored in order_snapshot.sql
+    Snapshot created: order_snapshot.sql
 
   #### How is our pricing changing over time?
-    *monitored in product_snapshot.sql
+    Snapshot created: product_snapshot.sql
 
 
 ### Part 2. Modeling challenge
@@ -30,10 +29,10 @@ Product funnel is defined with 3 levels for our dataset:
     *Sessions with any event of type add_to_cart / checkout
     *Sessions with any event of type checkout
 
-#### I was able to use my existing fct_sessions model to answer these questions:
-### total_sessions: 578
-### from page_view to add_to_cart: 80.80%
-### from add_to_cart to checkout: 77.30%
+### I was able to use my existing fct_sessions model to answer these questions:
+#### total_sessions: 578
+#### from page_view to add_to_cart: 80.80%
+#### from add_to_cart to checkout: 77.30%
 
 ``` sql
 with temp_t as (
@@ -52,7 +51,7 @@ select
 
 from temp_t
 ```
-#### Created an exposure for my Product Funnel Dashboard and verified it's displaying correctly in the DAG. 
+#### I created an exposure for my Product Funnel Dashboard and verified it's displaying correctly in the DAG. 
 
 ### Part 3: Reflection question
 #### Reflecting on your learning in this class...
