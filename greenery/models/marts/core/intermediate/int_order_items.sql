@@ -28,8 +28,8 @@ select
     iu.unique_items
 
 from {{ ref('stg_greenery__orders') }} as o
-left join {{ ref('stg_greenery__order_items') }} as oi
-    on o.order_guid = oi.order_guid
+--inner join {{ ref('stg_greenery__order_items') }} as oi
+    --on o.order_guid = oi.order_guid
 left join item_agg as ia
     on o.order_guid = ia.order_guid
 left join is_unique as iu

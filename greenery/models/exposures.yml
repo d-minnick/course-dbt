@@ -1,0 +1,11 @@
+version: 2
+
+exposures:  
+- name: Product Funnel Dashboard
+  type: dashboard
+  maturity: high
+  owner:
+    name: Deanna M
+    email: deanna@greenery.com
+  depends_on:
+    - ref('fct_sessions')
